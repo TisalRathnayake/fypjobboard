@@ -83,7 +83,7 @@ const HeaderTop = () => {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
-                        HR APP
+                        Job Portal Application© | TechTycoons
                     </Typography>
 
                     {/* toggle dark theme */}

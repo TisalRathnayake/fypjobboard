@@ -13,7 +13,7 @@ const AdminDashboard = () => {
         <>
             <Box>
                 <Typography variant="h4" sx={{ color: "white", pb: 3 }}>
-                    Dashboard
+                    Admin Dashboard
                 </Typography>
                 <Stack
                     direction={{ xs: 'column', sm: 'row' }}
@@ -21,19 +21,19 @@ const AdminDashboard = () => {
                 >
 
                     <StatComponent
-                        value="45621"
+                        value="4"
                         icon={<SupervisorAccountIcon sx={{ color: "#fafafa", fontSize: 30 }} />}
-                        description="Administrators"
+                        description="Users"
                         money=''
                     />
                     <StatComponent
-                        value="450"
+                        value="3"
                         icon={<WorkIcon sx={{ color: "#fafafa", fontSize: 30 }} />}
                         description="Jobs"
                         money=''
                     />
                     <StatComponent
-                        value="6548"
+                        value="6"
                         icon={<CategoryIcon sx={{ color: "#fafafa", fontSize: 30 }} />}
                         description="Jobs categories"
                         money=''

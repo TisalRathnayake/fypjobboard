@@ -173,7 +173,7 @@ const UserInfoDashboard = () => {
                             }}
                             fullWidth
                             id="AddressLine1"
-                            label="AddressLine1"
+                            label="Address Line 1"
                             name='AddressLine1'
                             InputLabelProps={{
                                 shrink: true,
@@ -196,7 +196,7 @@ const UserInfoDashboard = () => {
                             }}
                             fullWidth
                             id="AddressLine2"
-                            label="AddressLine2"
+                            label="Address Line 2"
                             name='AddressLine2'
                             InputLabelProps={{
                                 shrink: true,
@@ -288,13 +288,13 @@ const UserInfoDashboard = () => {
                             }}
                             fullWidth
                             id="PostalCode"
-                            label="PostalCode"
+                            label="Postal Code"
                             name='PostalCode'
                             InputLabelProps={{
                                 shrink: true,
                             }}
 
-                            placeholder="PostalCode"
+                            placeholder="Postal Code"
                             value={formik.values.PostalCode}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
@@ -311,13 +311,13 @@ const UserInfoDashboard = () => {
                             }}
                             fullWidth
                             id="ContactNo"
-                            label="ContactNo"
+                            label="Contact No"
                             name='ContactNo'
                             InputLabelProps={{
                                 shrink: true,
                             }}
 
-                            placeholder="ContactNo"
+                            placeholder="Contact No"
                             value={formik.values.ContactNo}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
@@ -426,13 +426,13 @@ const UserInfoDashboard = () => {
                             }}
                             fullWidth
                             id="UniversityName"
-                            label="UniversityName"
+                            label="University"
                             name='UniversityName'
                             InputLabelProps={{
                                 shrink: true,
                             }}
 
-                            placeholder="UniversityName"
+                            placeholder="University"
                             value={formik.values.UniversityName}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
@@ -449,13 +449,13 @@ const UserInfoDashboard = () => {
                             }}
                             fullWidth
                             id="EducationalQualifications"
-                            label="EducationalQualifications"
+                            label="Educational Qualifications"
                             name='EducationalQualifications'
                             InputLabelProps={{
                                 shrink: true,
                             }}
 
-                            placeholder="EducationalQualifications"
+                            placeholder="add educational qualifications"
                             value={formik.values.EducationalQualifications}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
@@ -472,13 +472,13 @@ const UserInfoDashboard = () => {
                             }}
                             fullWidth
                             id="Other_Qualifications"
-                            label="Other_Qualifications"
+                            label="Other Qualifications"
                             name='Other_Qualifications'
                             InputLabelProps={{
                                 shrink: true,
                             }}
 
-                            placeholder="Other_Qualifications"
+                            placeholder="add other qualifications"
                             value={formik.values.Other_Qualifications}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
@@ -495,13 +495,13 @@ const UserInfoDashboard = () => {
                             }}
                             fullWidth
                             id="Technical_skills"
-                            label="Technical_skills"
+                            label="Technical Skills"
                             name='Technical_skills'
                             InputLabelProps={{
                                 shrink: true,
                             }}
 
-                            placeholder="Technical_skills"
+                            placeholder="add technical skills"
                             value={formik.values.Technical_skills}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
@@ -518,13 +518,13 @@ const UserInfoDashboard = () => {
                             }}
                             fullWidth
                             id="Soft_skills"
-                            label="Soft_skills"
+                            label="Soft Skills"
                             name='Soft_skills'
                             InputLabelProps={{
                                 shrink: true,
                             }}
 
-                            placeholder="Soft_skills"
+                            placeholder="add soft skills"
                             value={formik.values.Soft_skills}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
@@ -541,13 +541,13 @@ const UserInfoDashboard = () => {
                             }}
                             fullWidth
                             id="Undergrade_Major"
-                            label="Undergrade_Major"
+                            label="Undergraduate Major"
                             name='Undergrade_Major'
                             InputLabelProps={{
                                 shrink: true,
                             }}
 
-                            placeholder="Undergrade_Major"
+                            placeholder="Undergraduate Major"
                             value={formik.values.Undergrade_Major}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
@@ -564,13 +564,13 @@ const UserInfoDashboard = () => {
                             }}
                             fullWidth
                             id="PreferredJob"
-                            label="PreferredJob"
+                            label="Preferred Job"
                             name='PreferredJob'
                             InputLabelProps={{
                                 shrink: true,
                             }}
 
-                            placeholder="PreferredJob"
+                            placeholder="Preferred Job"
                             value={formik.values.PreferredJob}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
