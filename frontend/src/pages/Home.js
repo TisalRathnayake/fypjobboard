@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../component/Navbar'
 import Header from '../component/Header'
-import { Box, Card, Container, ListItemIcon, MenuItem, MenuList, Pagination, Stack, Typography, useTheme } from '@mui/material'
+import { Box, Card, Container, ListItemIcon, MenuItem, MenuList, Pagination, Stack, Switch, Typography, useTheme } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
-import { jobLoadAction } from '../redux/actions/jobAction'
+import { getJobForEmail, jobLoadAction } from '../redux/actions/jobAction'
 import { Link, useParams } from 'react-router-dom'
 import CardElement from '../component/CardElement'
 import Footer from '../component/Footer'
@@ -11,15 +11,28 @@ import LoadingBox from '../component/LoadingBox'
 import SelectComponent from '../component/SelectComponent'
 import { jobTypeLoadAction } from '../redux/actions/jobTypeAction'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { userProfileAction } from '../redux/actions/userAction'
 
 
 
 const Home = () => {
     const { jobs, setUniqueLocation, pages, loading } = useSelector(state => state.loadJobs);
 
+    const { user } = useSelector(state => state.userProfile);
+
+    const { userInfo } = useSelector(state => state.signIn);
+
+
+
     const { palette } = useTheme();
     const dispatch = useDispatch();
     const { keyword, location } = useParams();
+
+    const [checked, setChecked] = React.useState(false);
+
+    const handleChange = (event) => {
+        setChecked(event.target.checked);
+    };
 
     const [page, setPage] = useState(1);
     const [cat, setCat] = React.useState('');
@@ -29,12 +42,19 @@ const Home = () => {
     }, [page, keyword, cat, location]);
 
     useEffect(() => {
+        dispatch(userProfileAction());
+    }, []);
+
+
+    useEffect(() => {
         dispatch(jobTypeLoadAction());
     }, []);
 
     const handleChangeCategory = (e) => {
         setCat(e.target.value);
     }
+
+
 
     return (
         <>
@@ -82,8 +102,33 @@ const Home = () => {
 
                                 </Box>
                             </Card>
+
+                            {userInfo && (
+
+                                <Card sx={{ minWidth: 150, mb: 3, mt: 3, p: 2, bgcolor: palette.primary.white, display: "flex", alignItems: "center" }}>
+                                    <Typography component="h6" sx={{}}>
+                                        Recommended Jobs Only
+                                    </Typography>
+                                    <Switch
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />
+                                </Card>
+                            )}
                         </Box>
                         <Box sx={{ flex: 5, p: 2 }}>
+
+                            {!loading && checked && (
+                                <CardElement
+
+                                    id={getJobForEmail(user.email)?._id}
+                                    jobTitle={getJobForEmail(user.email)?.title}
+                                    description={getJobForEmail(user.email)?.description}
+                                    category={getJobForEmail(user.email)?.jobType ? getJobForEmail(user.email)?.jobType.jobTypeName : "No category"}
+                                    location={getJobForEmail(user.email)?.location}
+                                />
+                            )}
                             {
                                 loading ?
                                     <LoadingBox /> :
@@ -102,7 +147,7 @@ const Home = () => {
                                         </> :
 
 
-                                        jobs && jobs.map((job, i) => (
+                                        !checked && jobs && jobs.map((job, i) => (
                                             <CardElement
                                                 key={i}
                                                 id={job._id}
