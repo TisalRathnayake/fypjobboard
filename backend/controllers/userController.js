@@ -52,7 +52,7 @@ exports.editUser = async (req, res, next) => {
             user
         })
         next();
-
+        print("hey");
     } catch (error) {
         return next(error);
     }
